@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="mainContent">
+        <h1 class="love-letter">Dear You,</h1>
+        <p class="message">You are the most wonderful person ever, and I can’t imagine a day without you. 💕</p>
+        <h2 class="invitation">Will you be my Valentine? 💌</h2>
+
+        <div class="buttons">
+            <button id="yesBtn">Yes 💖</button>
+            <button id="noBtn">No 🚫</button>
+            <button id="maybeBtn">Maybe 🤔</button>
+        </div>
+    </div>
+
+    <div id="animationSection" class="hidden">
+        <h1 class="yes-animation">🎉 YAYYY, YOU SAID YES! 🎉</h1>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExc204YjRja3hhbnQyNjlydmRoM2duZm9yemcxZjV3ODV5bmg1a2dscCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KMA0tUFwtEtDBWNO9j/giphy.gif" alt="Hearts Animation" class="hearts-gif">
+        <h2 id="countdown" class="hidden"></h2>
+        <h2 id="readyMessage" class="hidden">Are you ready to catch my heart? 💘</h2>
+    </div>
+
+    <div id="game" class="hidden">
+        <h2>Catch the Hearts Minigame 💕</h2>
+        <p>Click the hearts to collect points!</p>
+        <div id="gameArea"></div>
+        <p>Score: <span id="score">0</span></p>
+    </div>
+    
+
+    <div id="winMessage" class="hidden">💘 You've won my heart! 💘</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+body {
+    background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #6A1B9A;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+.container, #animationSection, #game, #winMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: none;
+}
+
+.container {
+    display: block;
+}
+
+.love-letter {
+    font-size: 36px;
+    color: #E91E63;
+    animation: heartbeat 1.5s infinite;
+}
+
+.message {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.invitation {
+    font-size: 28px;
+    margin: 30px 0;
+    color: #9C27B0;
+    animation: float 3s ease-in-out infinite;
+}
+
+.buttons button {
+    background: #FF4081;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+#yesBtn:hover {
+    background: #E91E63;
+    transform: scale(1.2);
+}
+
+#noBtn:hover {
+    background: #F44336;
+    transform: rotate(20deg);
+}
+
+#maybeBtn:hover {
+    background: #FFC107;
+    transform: rotate(10deg);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* YES Animation */
+#animationSection {
+    background: linear-gradient(135deg, #FFC1E3, #FFD3A5);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.yes-animation {
+    font-size: 50px;
+    color: #FF1493;
+    animation: popIn 1s ease forwards, heartbeat 1.5s infinite;
+    margin-bottom: 20px;
+}
+
+.hearts-gif {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}
+
+#countdown, #readyMessage {
+    font-size: 60px;
+    font-weight: bold;
+    color: #D81B60;
+    animation: popIn 1s ease-in-out;
+}
+
+#gameArea {
+    position: relative;
+    height: 300px;
+    background: #F8BBD0;
+    border: 3px dashed #D81B60;
+    overflow: hidden;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 20px;
+    z-index: 2000; /* Ensure it's layered below the hearts */
+}
+
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzE4Z2F2MGc5bDJtZDQxdDlydHMxM3Z2bnl6MGljMXNmMHY4OWp1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26BRv0ThflsHCqDrG/giphy.gif') no-repeat center center;
+    background-size: contain;
+    background-color: transparent;
+    opacity: 1;
+    border: none;
+    cursor: pointer;
+    z-index: 3000; /* Increased to ensure it's above all layers */
+    animation: fall 3s linear forwards;
+}
+
+
+#winMessage {
+    background: linear-gradient(135deg, #FFD1DC, #FF90B6);
+    font-size: 36px;
+    color: #FF1493;
+    padding: 40px;
+    border: 4px dashed #E91E63;
+    z-index: 3000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Heart Falling Animation */
+@keyframes fall {
+    from { top: -50px; }
+    to { top: 300px; }
+}
+
+
+/* Celebration animation */
+@keyframes celebration {
+    0% { background: #FFD1DC; transform: scale(1); }
+    100% { background: #FF90B6; transform: scale(1.1); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
